@@ -1302,6 +1302,9 @@ define('contextInformationList',['dataList', 'contextInformation'], function(Dat
         function ContextInformationList() {
             DataList.call(this);
             this._type = ContextInformation;
+
+            this._cacheSession = null;
+
             return this;
         }
 
@@ -3787,7 +3790,6 @@ define('widget',['queryable', 'callback', 'callbackList', 'contextInformation', 
 			/**
 			 * Notifies other components and sends the contextual information.
 			 *
-			 * @virtual
 			 * @public
 			 */
 			Widget.prototype.notify = function() {
