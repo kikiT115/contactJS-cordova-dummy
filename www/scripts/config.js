@@ -19,7 +19,8 @@ require.config({
         // external libraries
         jquery: 'lib/jquery-2.1.4.min',
         MathUuid: 'lib/Math.uuid',
-        contactJS: 'lib/contactJS'
+        contactJS: 'lib/contactJS',
+        urijs: 'lib/urijs'
     },
     shim:{
         'jquery': {
