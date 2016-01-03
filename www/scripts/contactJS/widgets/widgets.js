@@ -2,9 +2,9 @@
  * Created by tobias on 11.11.15.
  */
 define([
-    './UnixTimeWidget'
-], function(
-    UnixTimeWidget
-) {
+    './UnixTimeWidget',
+    './RouterFinderWidget',
+    './FritzBoxReaderWidget'
+], function() {
     return arguments;
 });
