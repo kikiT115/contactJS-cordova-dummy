@@ -32,6 +32,28 @@ define(['contactJS'], function(contactJS) {
         };
     };
 
+    /**
+     * Reduces widget code overhead by automating some common snippets. A usage example is given below.
+     * 
+     * WidgetCreator.extend("RouterFinderWidget", {
+     *   description: {
+     *     out: [
+     *       {
+     *         "name": "CI_ROUTER_URL",
+     *         "type": "STRING",
+     *         "parameterList": [["CP_UNIT", "STRING", "URL"]]
+     *       }
+     *     ],
+     *     updateInterval: 5000
+     *   },
+     *   simpleQueryGenerator: function(callback) {
+     *     var routerUrl = "http://192.168.2.1/login.html";
+     *     callback({0: routerUrl});
+     *   }
+     * });
+     *
+     * @type {{extend: Function}}
+     */
     var WidgetCreator = {
         extend: function(name, properties) {
             var createdWidget = function(discoverer) {
