@@ -2,38 +2,49 @@ define(['contactJS', 'jquery', './WidgetCreator', 'urijs/URI'], function (contac
     var ROUTER_URL = "http://192.168.178.1/logincheck.lua";
     var WLAN_PAGE_URL_START = "/wlan/wlan_settings.lua";
 
-    var readStartPage = function(success, error) {
-        var startPageFound = function(startPageHTML) {
-            readWlanLink(success, error, {html: {logincheck: startPageHTML}, currentUrl: ROUTER_URL});
+    // Ablauf:
+    // 1. URI laden
+    // 2. Filter anwenden
+    // 3. Neue URI konstruieren
+    // 4. Ablauf neu starten
+    var crawlPage = function(startUri, callbacks, error) {
+        var currentUri = new URI(startUri);
+        var currentCallbackIndex = 0;
+
+        var getNextUri = function(currentPageHtml) {
+            var currentCallback = callbacks[currentCallbackIndex];
+            var nextRelativeUri = currentCallback(currentPageHtml);
+
+            if (nextRelativeUri) {
+                currentUri = new URI(nextRelativeUri).absoluteTo(currentUri);
+                currentCallbackIndex++;
+                loadUri();
+            }
         };
 
-        $.ajax({
-            url: ROUTER_URL,
-            success: startPageFound,
-            crossDomain: true
-        });
+        var loadUri = function() {
+            $.ajax({
+                url: currentUri.toString(),
+                success: getNextUri,
+                error: error,
+                crossDomain: true
+            });
+        };
+
+        loadUri();
     };
 
-    var readWlanLink = function(success, error, options) {
-        var html = options.html.logincheck;
-        var linkSelector = "a[href^='" + WLAN_PAGE_URL_START + "']";
-        var wlanLink = $(linkSelector, html).attr("href");
-        var wlanUri = new URI(wlanLink, options.currentUrl);
-
-        var wlanPageFound = function(wlanPageHtml) {
-            console.log("WLAN HTML", wlanPageHtml);
-
+    var readStartPage = function(success, error) {
+        var callbacks = [function(startPage) {
+            var linkSelector = "a[href^='" + WLAN_PAGE_URL_START + "']";
+            return $(linkSelector, startPage).attr("href");
+        }, function(wlanPage) {
             var linkSelector = "input#uiView_SSID";
-            var wlanSSID = $(linkSelector, wlanPageHtml).attr("value");
-
+            var wlanSSID = $(linkSelector, wlanPage).attr("value");
             success(wlanSSID);
-        };
+        }];
 
-        $.ajax({
-            url: wlanUri.toString(),
-            success: wlanPageFound,
-            crossDomain: true
-        });
+        crawlPage(ROUTER_URL, callbacks, error);
     };
 
     return WidgetCreator.extend("RouterFinderWidget", {
@@ -45,7 +56,7 @@ define(['contactJS', 'jquery', './WidgetCreator', 'urijs/URI'], function (contac
                     "parameterList": [["CP_UNIT", "STRING", "WLAN_SSID"]]
                 }
             ],
-            updateInterval: 2000
+            updateInterval: 10000
         },
         simpleQueryGenerator: function(callback) {
             var success = function(wlanSSID) {
