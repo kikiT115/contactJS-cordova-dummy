@@ -76,4 +76,3 @@ var app = {
 };
 
 app.initialize();
-app.onDeviceReady();
