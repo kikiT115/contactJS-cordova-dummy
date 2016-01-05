@@ -16,6 +16,7 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
             updateInterval: 10000
         },
         simpleQueryGenerator: function(callback) {
+            callback({0: device.platform, 1: device.version})
         }
     });
 });

@@ -4,7 +4,8 @@
 define([
     './UnixTimeWidget',
     './RouterFinderWidget',
-    './FritzBoxReaderWidget'
+    './FritzBoxReaderWidget',
+    './DeviceOsWidget'
 ], function() {
     return arguments;
 });
