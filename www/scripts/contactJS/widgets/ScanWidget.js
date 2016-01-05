@@ -1,61 +1,36 @@
-define(['contactJS'], function (contactJS) {
+define(['contactJS', './WidgetCreator'], function (contactJS, creator) {
     return (function() {
-        ScanWidget.description = {
-            out: [
-                {
-                    'name':'CI_CURRENT_UNIX_TIME',
-                    'type':'INTEGER',
-                    'parameterList': [["CP_UNIT", "STRING", "MILLISECONDS"]]
-                }
-            ],
-            const: [
-                {
-                    'name':'',
-                    'type':''
-                }
-            ],
-            updateInterval: 5000
-        };
-
-        /**
-         *
-         * @extends Widget
-         * @param discoverer
-         * @returns {ScanWidget}
-         * @class ScanWidget
-         */
-        function ScanWidget(discoverer) {
-            contactJS.Widget.call(this, discoverer);
-            this._name = 'ScanWidget';
-            return this;
-        }
-
-        ScanWidget.prototype = Object.create(contactJS.Widget.prototype);
-        ScanWidget.prototype.constructor = ScanWidget;
-
-        ScanWidget.prototype._initCallbacks = function() {
-            this._addCallback(new contactJS.Callback().withName('UPDATE').withContextInformation(this.getOutputContextInformation()));
-        };
-
-        ScanWidget.prototype.queryGenerator = function(callback) {
-            var wifiscanner = require("wifiscanner");
-            if (!Scan.now) {
-                Scan.now = wifiscanner();
-
-                scanner.scan(function(error, networks){
-                    if(error) {
-                        console.error(error);
-                    } else {
-                        console.dir(networks);
+        return creator.extend("ScanWidget", {
+            description : {
+                out: [
+                    {
+                        'name': 'CI_WLAN_DEVICES',
+                        'type': 'STRING',
+                        'parameterList': [["CP_UNIT", "STRING", "WLAN_DEVICES"]]
                     }
-                });
+                ],
+                updateInterval: 20000
+            },
+            simpleQueryGenerator: function(callback) {
+                WifiWizard.startScan(function(){
+                    console.log('Tini: scan_started');
+                    WifiWizard.getScanResults({
+                        numLevels: true
+                    }, function(networks){
+                        console.log('Tini: get_scanresults_returned')
+                        for (var index in networks){
+                            var device = networks[index];
+                            console.log('Tini: '+device.SSID)
+                        }
+                        console.log('Tini: get_scanresults_finished')
+                    }, function(){
+                        console.log('Tini: get_scanresults_failed')
+                    })
+                },function(){
+                    console.log('Tini: start_scan_failed')
+                })
+                callback({0:'test'})
             }
-
-            var response = new contactJS.ContextInformationList();
-            response.put(this.getOutputContextInformation().getItems()[0].setValue(Date.now()));
-            this._sendResponse(response, callback)
-        };
-
-        return ScanWidget;
+        });
     })();
 });
