@@ -34,7 +34,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Resources;
 
 
-namespace de.unipotsdam.motivate.contactjsdummy
+namespace de.unipotsdam.motivate.thermofind
 {
     public partial class MainPage : PhoneApplicationPage
     {

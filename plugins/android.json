@@ -12,6 +12,9 @@
         },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "de.unipotsdam.motivate.contactjsdummy"
+        },
+        "com.pylonproducts.wifiwizard": {
+            "PACKAGE_NAME": "de.unipotsdam.motivate.contactjsdummy"
         }
     },
     "dependent_plugins": {}

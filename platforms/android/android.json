@@ -11,6 +11,28 @@
                         {
                             "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"WifiWizard\"><param name=\"android-package\" value=\"com.pylonproducts.wifiwizard.WifiWizard\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -22,6 +44,9 @@
             "PACKAGE_NAME": "de.unipotsdam.motivate.contactjsdummy"
         },
         "cordova-plugin-console": {
+            "PACKAGE_NAME": "de.unipotsdam.motivate.contactjsdummy"
+        },
+        "com.pylonproducts.wifiwizard": {
             "PACKAGE_NAME": "de.unipotsdam.motivate.contactjsdummy"
         }
     },
@@ -48,6 +73,17 @@
             "clobbers": [
                 "console"
             ]
+        },
+        {
+            "file": "plugins/com.pylonproducts.wifiwizard/www/WifiWizard.js",
+            "id": "com.pylonproducts.wifiwizard.WifiWizard",
+            "pluginId": "com.pylonproducts.wifiwizard",
+            "clobbers": [
+                "window.WifiWizard"
+            ]
         }
-    ]
+    ],
+    "plugin_metadata": {
+        "com.pylonproducts.wifiwizard": "0.2.11"
+    }
 }

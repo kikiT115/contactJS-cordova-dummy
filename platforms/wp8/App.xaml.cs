@@ -32,7 +32,7 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
-namespace de.unipotsdam.motivate.contactjsdummy
+namespace de.unipotsdam.motivate.thermofind
 {
     public partial class App : Application
     {

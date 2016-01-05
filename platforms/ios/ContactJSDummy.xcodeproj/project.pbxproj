@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -41,6 +40,8 @@
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		CD75B00655044A288D61F68B /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F30012174E4C7B9F2922CF /* CDVLogger.m */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
+		6B216AB4D0E44C4C8E639662 /* NXWWifiWizard.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F94FA736194E63ADA26120 /* NXWWifiWizard.m */; };
+		73BF6A551F4F4125902AA788 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E06C56E10C0E432A9A2788B4 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,9 @@
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ContactJSDummy/config.xml; sourceTree = "<group>"; };
+		D7F94FA736194E63ADA26120 /* NXWWifiWizard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NXWWifiWizard.m"; path = "com.pylonproducts.wifiwizard/NXWWifiWizard.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		09DD938257E84A23A25287E4 /* NXWWifiWizard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NXWWifiWizard.h"; path = "com.pylonproducts.wifiwizard/NXWWifiWizard.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		E06C56E10C0E432A9A2788B4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
+				73BF6A551F4F4125902AA788 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +194,7 @@
 				5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
+				E06C56E10C0E432A9A2788B4 /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -206,6 +212,8 @@
 			children = (
 				19F30012174E4C7B9F2922CF /* CDVLogger.m */,
 				AC2E286452814146B057BAF0 /* CDVLogger.h */,
+				D7F94FA736194E63ADA26120 /* NXWWifiWizard.m */,
+				09DD938257E84A23A25287E4 /* NXWWifiWizard.h */,
 			);
 			name = Plugins;
 			path = ContactJSDummy/Plugins;
@@ -287,7 +295,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 710;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 3KGVH967Y2;
@@ -396,6 +404,7 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				CD75B00655044A288D61F68B /* CDVLogger.m in Sources */,
+				6B216AB4D0E44C4C8E639662 /* NXWWifiWizard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

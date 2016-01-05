@@ -11,6 +11,10 @@
                         {
                             "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"WifiWizard\"><param name=\"ios-package\" value=\"NXWWifiWizard\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -19,6 +23,12 @@
     },
     "installed_plugins": {
         "cordova-plugin-console": {
+            "PACKAGE_NAME": "de.unipotsdam.motivate.contactjsdummy"
+        },
+        "com.pylonproducts.wifiwizard": {
+            "PACKAGE_NAME": "de.unipotsdam.motivate.contactjsdummy"
+        },
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "de.unipotsdam.motivate.contactjsdummy"
         }
     },
@@ -39,6 +49,18 @@
             "clobbers": [
                 "console"
             ]
+        },
+        {
+            "file": "plugins/com.pylonproducts.wifiwizard/www/WifiWizard.js",
+            "id": "com.pylonproducts.wifiwizard.WifiWizard",
+            "pluginId": "com.pylonproducts.wifiwizard",
+            "clobbers": [
+                "window.WifiWizard"
+            ]
         }
-    ]
+    ],
+    "plugin_metadata": {
+        "com.pylonproducts.wifiwizard": "0.2.11",
+        "cordova-plugin-whitelist": "1.0.0"
+    }
 }
