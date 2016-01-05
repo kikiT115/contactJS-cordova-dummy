@@ -28,4 +28,5 @@
     <engine name="wp8" spec="~3.8.1" />
     <plugin name="cordova-plugin-console" spec="~1.0.2" />
     <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
+    <plugin name="com.pylonproducts.wifiwizard" spec="https://github.com/parsonsmatt/WifiWizard.git" />
 </widget>
