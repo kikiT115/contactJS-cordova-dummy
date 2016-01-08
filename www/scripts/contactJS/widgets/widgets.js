@@ -5,7 +5,8 @@ define([
     './UnixTimeWidget',
     './RouterFinderWidget',
     './FritzBoxReaderWidget',
-    './DeviceOsWidget'
+    './DeviceOsWidget',
+    './NtpConnectionWidget'
 ], function() {
     return arguments;
 });
