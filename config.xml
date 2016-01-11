@@ -27,5 +27,6 @@
     <plugin name="cordova-plugin-console" spec="~1.0.2" />
     <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
     <plugin name="cordova-plugin-device" spec="~1.1.0" />
+    <plugin name="cordova-plugin-network-information" spec="~1.1.0" />
     <plugin name="de.unipotsdam.cordova.ntpanalyzer" spec="https://github.com/ItsNotYou/cordova-plugin-ntp-analyzer.git" />
 </widget>

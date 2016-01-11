@@ -1,6 +1,22 @@
 define(['contactJS', './WidgetCreator'], function (contactJS, WidgetCreator) {
     var ntpHost = "clock.psu.edu";
 
+    function getConnectedNetwork() {
+        var networkState = navigator.connection.type;
+
+        var states = {};
+        states[Connection.UNKNOWN]  = 'unknown';
+        states[Connection.ETHERNET] = 'ethernet';
+        states[Connection.WIFI]     = 'wifi';
+        states[Connection.CELL_2G]  = 'cell';
+        states[Connection.CELL_3G]  = 'cell';
+        states[Connection.CELL_4G]  = 'cell';
+        states[Connection.CELL]     = 'cell';
+        states[Connection.NONE]     = 'none';
+
+        return states[networkState];
+    }
+
     return WidgetCreator.extend("NtpConnectionWidget", {
         description: {
             out: [
@@ -18,6 +34,7 @@ define(['contactJS', './WidgetCreator'], function (contactJS, WidgetCreator) {
 
                 callback({0: {
                     host: ntpHost,
+                    connection: getConnectedNetwork(),
                     available: isAvailable
                 }})
             };
