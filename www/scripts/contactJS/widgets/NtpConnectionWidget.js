@@ -12,7 +12,7 @@ define(['contactJS', './WidgetCreator'], function (contactJS, WidgetCreator) {
         },
         simpleQueryGenerator: function(callback) {
             var ntpHost = "clock.psu.edu";
-            ntp.analyzer.diagnose(ntpHost, function(result) {
+            ntp.analyzer.diagnose({host: ntpHost, timeout: 3000}, function(result) {
                 console.log("Hendrik: NtpAnalyzer said " + result);
             }, function(error) {
                 console.log("Hendrik: Error " + error);
