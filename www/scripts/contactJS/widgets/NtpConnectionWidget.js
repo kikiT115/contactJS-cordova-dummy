@@ -22,8 +22,8 @@ define(['contactJS', './WidgetCreator'], function (contactJS, WidgetCreator) {
             out: [
                 {
                     "name": "CI_NTP_CONNECTION",
-                    "type": "STRING",
-                    "parameterList": [["CP_UNIT", "STRING", "CONNECTION"]]
+                    "type": "OBJECT",
+                    "parameterList": [["CP_UNIT", "OBJECT", "CONNECTION"]]
                 }
             ],
             updateInterval: 5000
