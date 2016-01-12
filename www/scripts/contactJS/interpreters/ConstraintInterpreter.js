@@ -4,15 +4,9 @@
 
 define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
     return (function() {
-        return creator.extend("MissingDeviceInterpreter", {
+        return creator.extend("ConstraintInterpreter", {
             description : {
                 in: [
-                    {
-                        //ScanWidget
-                        'name': 'CI_WLAN_DEVICES',
-                        'type': 'STRING',
-                        'parameterList': [["CP_UNIT", "STRING", "WLAN_DEVICES"]]
-                    },
                     {
                         //ExpectedDevicesWidget
                         'name': 'CI_DEVICES',
@@ -30,10 +24,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 updateInterval: 20000
             },
             simpleInterpretData: function(values, callback) {
-                var value = values[0];
-                console.log('Tini2: '+value);
-                callback({0:true});
-                console.log('Tini2: response_sent');
+                //müssen Hardcoded werden aus dem Handbuch...
             }
         });
     })();

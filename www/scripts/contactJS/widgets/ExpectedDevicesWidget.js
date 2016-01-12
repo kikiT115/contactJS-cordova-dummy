@@ -1,0 +1,20 @@
+define(['contactJS', './WidgetCreator'], function (contactJS, creator) {
+    return (function() {
+        return creator.extend("ExpectedDevicesWidget", {
+            description : {
+                out: [
+                    {
+                        'name': 'CI_DEVICES',
+                        'type': 'STRING',
+                        'parameterList': [["CP_UNIT", "STRING", "DEVICES"]]
+                    }
+                ],
+                updateInterval: 20000
+            },
+            simpleQueryGenerator: function(callback) {
+                callback({0:['thermo_name']});
+                //bekommen wir von equeo geliefert (data_object)
+            }
+        });
+    })();
+});
