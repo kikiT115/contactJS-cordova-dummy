@@ -3,7 +3,7 @@ define(['contactJS'], function(contactJS) {
     var getInputData = function(inContextInformation) {
         var result = [];
 
-        var items = this.getInputContextInformation().getItem();
+        var items = this.getInputContextInformation().getItems();
         for (var itemIndex in items) {
             var value = items[itemIndex];
             result.push(inContextInformation.getValueForContextInformationOfKind(value));
@@ -27,11 +27,11 @@ define(['contactJS'], function(contactJS) {
     var createSimpleQueryGenerator = function(simpleQueryGenerator) {
         return function(inContextInformation, outContextInformation, callback) {
             var sendResponse = function(simplifiedResponse) {
-                setOutputData(simplifiedResponse, outContextInformation);
-                callback();
+                var result = setOutputData.call(this, simplifiedResponse, outContextInformation);
+                callback(result);
             };
 
-            var values = getInputData(inContextInformation);
+            var values = getInputData.call(this, inContextInformation);
             simpleQueryGenerator.call(this, values, sendResponse);
         };
     };
