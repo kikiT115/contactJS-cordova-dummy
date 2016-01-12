@@ -4,9 +4,9 @@ define(['contactJS', './WidgetCreator'], function (contactJS, creator) {
             description : {
                 out: [
                     {
-                        'name': 'CI_WLAN_DEVICES',
-                        'type': 'STRING',
-                        'parameterList': [["CP_UNIT", "STRING", "WLAN_DEVICES"]]
+                        'name': 'CI_DEVICES',
+                        'type': 'ARRAY_OF_STRING',
+                        'parameterList': [["CP_UNIT", "STRING", "AVAILABLE_DEVICES"]]
                     }
                 ],
                 updateInterval: 20000

@@ -10,7 +10,7 @@ define(['contactJS', './WidgetCreator'], function (contactJS, creator) {
                     {
                         'name': 'CI_KEYWORD',
                         'type': 'STRING',
-                        'parameterList': [["CP_UNIT", "STRING", "KEYWORD"]]
+                        'parameterList': [["CP_UNIT", "STRING", "SUPPORT_KEYWORD"]]
                     }
                 ],
                 updateInterval: 20000

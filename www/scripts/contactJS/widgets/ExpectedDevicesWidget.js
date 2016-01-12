@@ -5,8 +5,8 @@ define(['contactJS', './WidgetCreator'], function (contactJS, creator) {
                 out: [
                     {
                         'name': 'CI_DEVICES',
-                        'type': 'STRING',
-                        'parameterList': [["CP_UNIT", "STRING", "DEVICES"]]
+                        'type': 'ARRAY_OF_STRING',
+                        'parameterList': [["CP_UNIT", "STRING", "EXPECTED_DEVICES"]]
                     }
                 ],
                 updateInterval: 20000
