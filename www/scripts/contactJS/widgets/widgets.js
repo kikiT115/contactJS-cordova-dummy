@@ -6,7 +6,8 @@ define([
     './RouterFinderWidget',
     './FritzBoxReaderWidget',
     './DeviceOsWidget',
-    './NtpConnectionWidget'
+    './NtpConnectionWidget',
+    './ScanWidget'
 ], function() {
     return arguments;
 });

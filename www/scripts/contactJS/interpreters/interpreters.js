@@ -2,7 +2,7 @@
  * Created by tobias on 11.11.15.
  */
 define([
-    './SecondsInterpreter'
+    './SecondsInterpreter', './MissingDevicesInterpreter'
 ], function(
     SecondsInterpreter
 ) {
