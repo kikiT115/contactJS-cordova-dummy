@@ -9,22 +9,27 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 in: [
                     {
                         //ScanWidget
-                        'name': 'CI_WLAN_DEVICES',
-                        'type': 'STRING',
-                        'parameterList': [["CP_UNIT", "STRING", "WLAN_DEVICES"]]
+                        'name': 'CI_DEVICES',
+                        'type': 'ARRAY_OF_STRING',
+                        'parameterList': [["CP_UNIT", "STRING", "AVAILABLE_DEVICES"]]
                     },
                     {
                         //ExpectedDevicesWidget
                         'name': 'CI_DEVICES',
-                        'type': 'STRING',
-                        'parameterList': [["CP_UNIT", "STRING", "DEVICES"]]
+                        'type': 'ARRAY_OF_STRING',
+                        'parameterList': [["CP_UNIT", "STRING", "EXPECTED_DEVICES"]]
                     }
                 ],
                 out: [
                     {
-                        'name':'CI_DEVICES',
-                        'type':'BOOLEAN',
-                        'parameterList': [["CP_UNIT", "STRING", "SECONDS"]]
+                        'name': 'CI_AVAILABLE_DEVICES',
+                        'type': 'BOOLEAN',
+                        'parameterList': [["CP_UNIT", "STRING", "FritzBox_3635"]]
+                    },
+                    {
+                        'name': 'CI_AVAILABLE_DEVICES',
+                        'type': 'BOOLEAN',
+                        'parameterList': [["CP_UNIT", "STRING", "ThermoGod_30B"]]
                     }
                 ],
                 updateInterval: 20000
