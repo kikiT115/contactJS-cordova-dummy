@@ -54,9 +54,9 @@ var app = {
                 // create new aggregator with requested contextual information
                 var aggregator = new contactJS.Aggregator(discoverer, contactJS.ContextInformationList.fromContextInformationDescriptions(discoverer, [
                     {
-                        name: 'CI_CURRENT_UNIX_TIME',
-                        type: 'INTEGER',
-                        parameterList: [["CP_UNIT", "STRING", "SECONDS"]]
+                        name: 'CI_WLAN_SSID',
+                        type: 'STRING',
+                        parameterList: [["CP_UNIT", "STRING", "WLAN_SSID"]]
                     }
                 ]))
             });
