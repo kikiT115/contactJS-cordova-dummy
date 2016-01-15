@@ -5,7 +5,7 @@
 define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
     return (function() {
         return creator.extend("MissingDeviceInterpreter", {
-            description : {
+            description: {
                 in: [
                     {
                         //ScanWidget
@@ -35,11 +35,31 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 updateInterval: 20000
             },
             simpleInterpretData: function(values, callback) {
-                var value = values[0];
-                console.log('Tini2: '+value);
-                callback({0:true});
-                console.log('Tini2: response_sent');
+                var dev1, dev2 = false;
+                for (var index1 in available_devices){
+                    var scan_dev = available_devices[index1];
+
+                    for (var index2 in expected_devices){
+                        var exp_dev = expected_devices[index2];
+
+                        if (scan_dev === exp_dev){
+                            console.log('Tini: expected device found!');
+
+                            if (scan_dev == 'FritzBox_3635'){
+                                console.log('Tini: device FritzBox_3635 found!');
+                                dev1 = true;
+                            }
+                            else if (scan_dev == 'ThermoGod_30B') {
+                                console.log('Tini: device ThermoGod_30B found!');
+                                dev2 = true;
+                            }
+                        }
+                    }
+                }
+                console.log('Tini: ' + dev1 + dev2);
+                callback({0:dev1, 1:dev2});
             }
+
         });
     })();
 });
