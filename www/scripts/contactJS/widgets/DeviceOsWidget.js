@@ -13,7 +13,8 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
         simpleQueryGenerator: function(callback) {
             callback({0: {
                 os: device.platform,
-                version: device.version
+                version: device.version,
+                model: device.model
             }})
         }
     });
