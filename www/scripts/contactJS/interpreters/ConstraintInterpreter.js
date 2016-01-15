@@ -10,15 +10,15 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                     {
                         //ExpectedDevicesWidget
                         'name': 'CI_DEVICES',
-                        'type': 'STRING',
-                        'parameterList': [["CP_UNIT", "STRING", "DEVICES"]]
+                        'type': 'ARRAY_OF_STRING',
+                        'parameterList': [["CP_UNIT", "STRING", "EXPECTED_DEVICES"]]
                     }
                 ],
                 out: [
                     {
-                        'name':'CI_DEVICES',
-                        'type':'BOOLEAN',
-                        'parameterList': [["CP_UNIT", "STRING", "SECONDS"]]
+                        'name': 'CI_CONSTRAINTS',
+                        'type': 'ARRAY_OF_STRING',
+                        'parameterList': [["CP_UNIT", "STRING", "EXPECTED_CONSTRAINTS"]]
                     }
                 ],
                 updateInterval: 20000
