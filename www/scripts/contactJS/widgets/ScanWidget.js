@@ -12,24 +12,23 @@ define(['contactJS', './WidgetCreator'], function (contactJS, creator) {
                 updateInterval: 20000
             },
             simpleQueryGenerator: function(callback) {
-                WifiWizard.startScan(function(){
-                    console.log('Tini1: scan_started');
+                var success = function(devices) {
+                    var result = [];
+                    for (var index in devices) {
+                        result.push(devices[index].SSID);
+                    }
+                    callback({0: result});
+                };
+
+                var error = function() {
+                    callback({});
+                };
+
+                WifiWizard.startScan(function() {
                     WifiWizard.getScanResults({
                         numLevels: true
-                    }, function(networks){
-                        console.log('Tini1: get_scanresults_returned')
-                        for (var index in networks){
-                            var device = networks[index];
-                            console.log('Tini1: '+device.SSID)
-                        }
-                        console.log('Tini1: get_scanresults_finished')
-                    }, function(){
-                        console.log('Tini1: get_scanresults_failed')
-                    })
-                },function(){
-                    console.log('Tini1: start_scan_failed')
-                })
-                callback({0:'test'})
+                    }, success, error)
+                }, error);
             }
         });
     })();
