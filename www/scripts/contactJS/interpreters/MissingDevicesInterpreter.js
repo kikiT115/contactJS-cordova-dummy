@@ -31,8 +31,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                         'type': 'BOOLEAN',
                         'parameterList': [["CP_UNIT", "STRING", "ThermoGod_30B"]]
                     }
-                ],
-                updateInterval: 20000
+                ]
             },
             simpleInterpretData: function(values, callback) {
                 var dev1, dev2 = false;

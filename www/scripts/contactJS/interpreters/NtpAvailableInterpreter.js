@@ -25,8 +25,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                         'type':'BOOLEAN',
                         'parameterList': [["CP_UNIT", "STRING", "CONNECTION_WIFI"]]
                     }
-                ],
-                updateInterval: 20000
+                ]
             },
             simpleInterpretData: function(values, callback) {
                 //müssen Hardcoded werden aus dem Handbuch...

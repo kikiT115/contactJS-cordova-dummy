@@ -20,8 +20,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                         'type':'STRING',
                         'parameterList': [["CP_UNIT", "STRING", "WIFI_UI"]]
                     }
-                ],
-                updateInterval: 20000
+                ]
             },
             simpleInterpretData: function(values, callback) {
                 //müssen Hardcoded werden aus dem Handbuch...
@@ -29,6 +28,3 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
         });
     })();
 });
-/**
- * Created by Kristin on 12.01.2016.
- */

@@ -28,8 +28,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                         'type': 'ARRAY_OF_STRING',
                         'parameterList': [["CP_UNIT", "STRING", "EXPECTED_CONSTRAINTS"]]
                     }
-                ],
-                updateInterval: 5000
+                ]
             },
             simpleInterpretData: function(values, callback) {
                 var result = [];
