@@ -2,9 +2,12 @@
  * Created by tobias on 11.11.15.
  */
 define([
-    './SecondsInterpreter', './MissingDevicesInterpreter'
-], function(
-    SecondsInterpreter
-) {
+    './ConstraintInterpreter',
+    './MissingDevicesInterpreter',
+    './NtpAvailableInterpreter',
+    './NtpProblemInterpreter',
+    './SecondsInterpreter',
+    './WifiUiInterpreter'
+], function() {
     return arguments;
 });

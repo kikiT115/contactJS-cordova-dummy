@@ -2,12 +2,14 @@
  * Created by tobias on 11.11.15.
  */
 define([
-    './UnixTimeWidget',
-    './RouterFinderWidget',
-    './FritzBoxReaderWidget',
     './DeviceOsWidget',
+    './ExpectedDevicesWidget',
+    './FritzBoxReaderWidget',
     './NtpConnectionWidget',
-    './ScanWidget'
+    './RouterFinderWidget',
+    './ScanWidget',
+    './SupportKeywordWidget',
+    './UnixTimeWidget'
 ], function() {
     return arguments;
 });
