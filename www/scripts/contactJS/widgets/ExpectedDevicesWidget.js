@@ -9,11 +9,11 @@ define(['contactJS', './WidgetCreator'], function (contactJS, creator) {
                         'parameterList': [["CP_UNIT", "STRING", "EXPECTED_DEVICES"]]
                     }
                 ],
-                updateInterval: 20000
+                updateInterval: 5000
             },
             simpleQueryGenerator: function(callback) {
-                callback({0:['thermo_name']});
-                //bekommen wir von equeo geliefert (data_object)
+                // TODO dummy values, still requires feedback from equeo
+                callback({0: ["ThermoGod_30B"]});
             }
         });
     })();
