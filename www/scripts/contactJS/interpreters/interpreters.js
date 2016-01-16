@@ -3,10 +3,11 @@
  */
 define([
     './ConstraintInterpreter',
-    './MissingDevicesInterpreter',
     './NtpAvailableInterpreter',
     './NtpProblemInterpreter',
+    './RouterFinderInterpreter',
     './SecondsInterpreter',
+    './ThermoFinderInterpreter',
     './WifiUiInterpreter'
 ], function() {
     return arguments;

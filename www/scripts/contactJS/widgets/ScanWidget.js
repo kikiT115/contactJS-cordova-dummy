@@ -17,6 +17,7 @@ define(['contactJS', './WidgetCreator'], function (contactJS, creator) {
                     for (var index in devices) {
                         result.push(devices[index].SSID);
                     }
+                    console.log('TINI ScanWidget '+result);
                     callback({0: result});
                 };
 

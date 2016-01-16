@@ -13,7 +13,8 @@ define(['contactJS', './WidgetCreator'], function (contactJS, creator) {
             },
             simpleQueryGenerator: function(callback) {
                 // TODO dummy values, still requires feedback from equeo
-                callback({0: ["ThermoGod_30B"]});
+                console.log('TINI ExpectedDeviceWidget gibt ...');
+                callback({0:["test1","johndoes","you_shall_not_pass"]});
             }
         });
     })();
