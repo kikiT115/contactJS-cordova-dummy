@@ -54,9 +54,9 @@ var app = {
                 // create new aggregator with requested contextual information
                 var aggregator = new contactJS.Aggregator(discoverer, contactJS.ContextInformationList.fromContextInformationDescriptions(discoverer, [
                     {
-                        'name': 'CI_AVAILABLE_DEVICE',
-                        'type': 'BOOLEAN',
-                        'parameterList': [["CP_UNIT", "STRING", "ROUTER"]]
+                        'name':'CI_AVAILABLE_NTP',
+                        'type':'BOOLEAN',
+                        'parameterList': [["CP_UNIT", "STRING", "CONNECTION_CELL"]]
                     }
                 ]))
             });

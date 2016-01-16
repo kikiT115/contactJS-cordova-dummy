@@ -3,9 +3,9 @@
  */
 define([
     './ConstraintInterpreter',
+    './NtpProblemInterpreter',
     './NtpViaCellInterpreter',
     './NtpViaWifiInterpreter',
-    './NtpProblemInterpreter',
     './RouterFinderInterpreter',
     './SecondsInterpreter',
     './ThermoFinderInterpreter',
