@@ -9,7 +9,7 @@ define(['contactJS', './WidgetCreator'], function (contactJS, creator) {
                         'parameterList': [["CP_UNIT", "STRING", "AVAILABLE_DEVICES"]]
                     }
                 ],
-                updateInterval: 20000
+                updateInterval: 5000
             },
             simpleQueryGenerator: function(callback) {
                 var success = function(devices) {
@@ -17,7 +17,6 @@ define(['contactJS', './WidgetCreator'], function (contactJS, creator) {
                     for (var index in devices) {
                         result.push(devices[index].SSID);
                     }
-                    console.log('TINI ScanWidget '+result);
                     callback({0: result});
                 };
 
