@@ -1,10 +1,9 @@
 /**
- * Created by Kristin on 12.01.2016.
+ * Created by Kristin on 16.01.2016.
  */
-
 define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
     return (function() {
-        return creator.extend("NtpAvailableInterpreter", {
+        return creator.extend("NtpViaWifiInterpreter", {
             description : {
                 in: [
                     {
@@ -18,21 +17,13 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                     {
                         'name':'CI_AVAILABLE_NTP',
                         'type':'BOOLEAN',
-                        'parameterList': [["CP_UNIT", "STRING", "CONNECTION_CELL"]]
-                    },
-                    {
-                        'name':'CI_AVAILABLE_NTP',
-                        'type':'BOOLEAN',
                         'parameterList': [["CP_UNIT", "STRING", "CONNECTION_WIFI"]]
                     }
                 ]
             },
             simpleInterpretData: function(values, callback) {
-                //müssen Hardcoded werden aus dem Handbuch...
+
             }
         });
     })();
 });
-/**
- * Created by Kristin on 12.01.2016.
- */
