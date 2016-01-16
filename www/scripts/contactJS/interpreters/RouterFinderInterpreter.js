@@ -41,7 +41,8 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                         if (scan_dev === exp_dev){
 
                             //tests if found device is searched router
-                            if (scan_dev === 'you_shall_not_pass'){
+                            //routername still dummy
+                            if (scan_dev === 'FritzBox_3635'){
                                 result = true;
                         }
                     }

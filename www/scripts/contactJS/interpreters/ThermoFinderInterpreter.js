@@ -39,8 +39,9 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
 
                         if (scan_dev === exp_dev){
 
-                            //tests if searched router
-                            if (scan_dev === 'johndoes'){
+                            //tests if searched Thermostat
+                            //thermostatname still dummy
+                            if (scan_dev === 'ThermoGod_30B'){
                                 result = true;
                             }
                         }
