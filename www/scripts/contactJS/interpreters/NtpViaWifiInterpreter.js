@@ -22,7 +22,23 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 ]
             },
             simpleInterpretData: function(values, callback) {
+                var result = false;
 
+                var host = values[0].host;
+                var connection = values[0].connection;
+                var available = values[0].available;
+
+                //console.log("TINI: connection - " + connection);
+
+                if (connection === 'wifi' && available === true){
+                    result = true;
+                }else if (connection === ('unknown') || available === undefined){
+                    result = undefined;
+                }else {
+                    result = false;
+                }
+                //console.log("TINI_Wifi: "+result);
+                callback({0: result});
             }
         });
     })();

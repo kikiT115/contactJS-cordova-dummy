@@ -24,30 +24,22 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
             },
             simpleInterpretData: function(values, callback) {
                 var result = false;
-                var host = values.host;
-                var connection = values.connection;
-                var available = values.available;
 
-                console.log("TINI1: host - " + host);
-                console.log("TINI1: connection - " + connection);
-                console.log("TINI1: available - " + available);
-                console.log("TINI1: result - " + result);
+                var host = values[0].host;
+                var connection = values[0].connection;
+                var available = values[0].available;
 
-                if (connection === 'cell' && available === isAvailable){
+                //console.log("TINI: connection - " + connection);
+
+                if (connection === 'cell' && available === true){
                     result = true;
-                }else if (connection === undefined || available === undefined){
+                }else if (connection === ('unknown') || available === undefined){
                     result = undefined;
                 }else {
                     result = false;
                 }
-                console.log("TINI2: result - " + result);
+                //console.log("TINI_Cell: "+result);
                 callback({0: result});
-
-                /**callback({0: {
-                    host: ntpHost,
-                    connection: getConnectedNetwork(),  -- unknown, ethernet, wifi, cell, none
-                    available: isAvailable
-                }})*/
             }
         });
     })();
