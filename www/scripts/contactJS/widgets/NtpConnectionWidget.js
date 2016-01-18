@@ -1,5 +1,4 @@
 define(['contactJS', './WidgetCreator'], function (contactJS, WidgetCreator) {
-    //var ntpHost = "0.de.pool.ntp.org";
     var ntpHost = "clock.psu.edu";
 
     function getConnectedNetwork() {
