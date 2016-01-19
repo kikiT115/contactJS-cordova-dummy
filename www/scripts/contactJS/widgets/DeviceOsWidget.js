@@ -11,6 +11,12 @@ define(['contactJS', 'jquery', './WidgetCreator'], function(contactJS, $, Widget
             updateInterval: 10000
         },
         simpleQueryGenerator: function(callback) {
+            console.log("Hendrik data: " + JSON.stringify({
+                    os: device.platform,
+                    version: device.version,
+                    model: device.model
+                }));
+
             callback({0: {
                 os: device.platform,
                 version: device.version,

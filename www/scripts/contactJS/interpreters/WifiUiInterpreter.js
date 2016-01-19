@@ -23,7 +23,21 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 ]
             },
             simpleInterpretData: function(values, callback) {
-                //müssen Hardcoded werden aus dem Handbuch...
+                var d = values[0];
+                // Wir wollen folgende Smartphones unterstützen
+
+                // - Samsung Galaxy S4 (Tini, Hendrik)
+                if (d.os === "Android" && d.version.startsWith("5.") && d.model === "GT-I9515") {
+                    callback({0: "Galaxy-S4-Android-5"});
+                    return;
+                }
+
+                // - Samsung Galaxy S6 (Matze)
+                // - Galaxy Nexus (Lehrstuhl)
+                // - Wiko Jam Up (Alina)
+
+                // Unbekanntes Gerät
+                callback({0: "Unknown-device"});
             }
         });
     })();
