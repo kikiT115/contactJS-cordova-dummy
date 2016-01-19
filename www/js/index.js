@@ -82,6 +82,11 @@ var app = {
                         'name': 'CI_CONSTRAINTS',
                         'type': 'ARRAY_OF_STRING',
                         'parameterList': [["CP_UNIT", "STRING", "EXPECTED_CONSTRAINTS"]]
+                    },
+                    {
+                        'name': 'CI_KEYWORD',
+                        'type': 'STRING',
+                        'parameterList': [["CP_UNIT", "STRING", "SUPPORT_KEYWORD"]]
                     }
                 ]))
             });
