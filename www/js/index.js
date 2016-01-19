@@ -57,6 +57,31 @@ var app = {
                         'name':'CI_AVAILABLE_NTP',
                         'type':'BOOLEAN',
                         'parameterList': [["CP_UNIT", "STRING", "CONNECTION_CELL"]]
+                    },
+                    {
+                        'name':'CI_AVAILABLE_NTP',
+                        'type':'BOOLEAN',
+                        'parameterList': [["CP_UNIT", "STRING", "CONNECTION_WIFI"]]
+                    },
+                    {
+                        'name': 'CI_AVAILABLE_DEVICE',
+                        'type': 'BOOLEAN',
+                        'parameterList': [["CP_UNIT", "STRING", "ROUTER"]]
+                    },
+                    {
+                        'name': 'CI_AVAILABLE_DEVICE',
+                        'type': 'BOOLEAN',
+                        'parameterList': [["CP_UNIT", "STRING", "CONTROLLER"]]
+                    },
+                    {
+                        'name':'CI_WIFI_UI',
+                        'type':'STRING',
+                        'parameterList': [["CP_UNIT", "STRING", "WIFI_UI"]]
+                    },
+                    {
+                        'name': 'CI_CONSTRAINTS',
+                        'type': 'ARRAY_OF_STRING',
+                        'parameterList': [["CP_UNIT", "STRING", "EXPECTED_CONSTRAINTS"]]
                     }
                 ]))
             });
