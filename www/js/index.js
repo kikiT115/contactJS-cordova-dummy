@@ -84,9 +84,8 @@ var app = {
                         'parameterList': [["CP_UNIT", "STRING", "EXPECTED_CONSTRAINTS"]]
                     },
                     {
-                        'name': 'CI_KEYWORD',
-                        'type': 'STRING',
-                        'parameterList': [["CP_UNIT", "STRING", "SUPPORT_KEYWORD"]]
+                        'name': 'CI_SUPPORT_KEYWORD',
+                        'type': 'STRING'
                     }
                 ]))
             });
