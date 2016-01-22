@@ -17,7 +17,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                     {
                         'name':'CI_AVAILABLE_NTP',
                         'type':'BOOLEAN',
-                        'parameterList': [["CP_UNIT", "STRING", "CONNECTION_WIFI"]]
+                        'parameterList': [["CP_CONNECTION_TYPE", "ENUM", "CONNECTION_WIFI"]]
                     }
                 ]
             },
