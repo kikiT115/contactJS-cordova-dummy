@@ -45,6 +45,10 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 }
 
                 // Wiko Jam Up (Alina)
+                if (d.os === "Android" && d.version.startsWith("5.") && d.model === "RAINBOW JAM") {
+                    callback({0: "Rainbow-Jam-Android-5"});
+                    return;
+                }
 
                 // Unbekanntes Gerät
                 callback({0: "Unknown-device"});
