@@ -17,8 +17,7 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
                 out: [
                     {
                         'name':'CI_WIFI_UI',
-                        'type':'STRING',
-                        'parameterList': [["CP_UNIT", "STRING", "WIFI_UI"]]
+                        'type':'ENUM'
                     }
                 ]
             },
