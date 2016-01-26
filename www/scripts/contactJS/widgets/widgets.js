@@ -9,7 +9,8 @@ define([
     './RouterFinderWidget',
     './ScanWidget',
     './SupportKeywordWidget',
-    './UnixTimeWidget'
+    './UnixTimeWidget',
+    './WifiEnabledWidget'
 ], function() {
     return arguments;
 });

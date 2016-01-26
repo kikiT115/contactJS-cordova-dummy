@@ -86,6 +86,11 @@ var app = {
                     {
                         'name': 'CI_SUPPORT_KEYWORD',
                         'type': 'STRING'
+                    },
+                    {
+                        'name': 'CI_WIFI_ENABLED',
+                        'type': 'BOOLEAN',
+                        'parameterList': [["CP_UNIT", "STRING", "WIFI_ENABLED"]]
                     }
                 ]))
             });
