@@ -33,10 +33,10 @@ define(['contactJS', './InterpreterCreator'], function (contactJS, creator) {
 
                 if (connection === 'cell' && available === true){
                     result = true;
-                }else if (connection === ('unknown') || available === undefined){
-                    result = undefined;
-                }else {
+                }else if (connection !== 'cell' && available === true){
                     result = false;
+                }else {
+                    result = undefined;
                 }
                 //console.log("TINI_Cell: "+result);
                 callback({0: result});
